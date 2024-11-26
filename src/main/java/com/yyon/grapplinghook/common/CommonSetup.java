@@ -7,7 +7,7 @@ import com.yyon.grapplinghook.enchantments.DoublejumpEnchantment;
 import com.yyon.grapplinghook.enchantments.SlidingEnchantment;
 import com.yyon.grapplinghook.enchantments.WallrunEnchantment;
 import com.yyon.grapplinghook.entities.grapplehook.GrapplehookEntity;
-import com.yyon.grapplinghook.grapplemod;
+import com.yyon.grapplinghook.GrappleMod;
 import com.yyon.grapplinghook.items.EnderStaffItem;
 import com.yyon.grapplinghook.items.ForcefieldItem;
 import com.yyon.grapplinghook.items.GrapplehookItem;
@@ -127,7 +127,7 @@ public class CommonSetup {
 
 
 
-	public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, grapplemod.MODID);
+	public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GrappleMod.MODID);
 	public static final RegistryObject<CreativeModeTab> GRAPPLE_TAB = TABS.register("grapplemod", () -> CreativeModeTab.builder().displayItems(
 			(itemDisplayParameters,output)-> {
 				ITEMS.getEntries().forEach((registryObject)-> output.accept(new ItemStack(registryObject.get()))

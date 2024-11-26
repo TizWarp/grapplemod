@@ -1,6 +1,6 @@
 package com.yyon.grapplinghook.utils;
 
-import com.yyon.grapplinghook.grapplemod;
+import com.yyon.grapplinghook.GrappleMod;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
@@ -20,7 +20,7 @@ public class Vec {
 	
 	public void checkNaN() {
 		if (Double.isNaN(x) || Double.isNaN(y) || Double.isNaN(z)) {
-			grapplemod.LOGGER.error("Error: vector contains NaN");
+			GrappleMod.LOGGER.error("Error: vector contains NaN");
 			this.x = 0; this.y = 0; this.z = 0;
 //			throw new RuntimeException("hello");
 		}
@@ -124,7 +124,7 @@ public class Vec {
 	
 	public Vec normalize() {
 		if (this.length() == 0) {
-			grapplemod.LOGGER.warn("normalizing vector with no length");
+			GrappleMod.LOGGER.warn("normalizing vector with no length");
 			return new Vec(this);
 		}
 		return this.mult(1.0 / this.length());
